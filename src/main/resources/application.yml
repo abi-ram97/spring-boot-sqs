@@ -1,0 +1,20 @@
+server:
+  port: 8084
+
+cloud:
+  aws:
+    credentials:
+      profile-name: default
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
+    region:
+      static: ${AWS_REGION:us-east-2}
+    sqs:
+      region: ${AWS_REGION:us-east-2}
+queues:
+  userQueue:
+    name: user-sqs
+    arn: https://sqs.us-east-2.amazonaws.com/495390640421/user-sqs
+  testQueue:
+    name: my-sqs
+    arn: https://sqs.us-east-2.amazonaws.com/495390640421/my-sqs
